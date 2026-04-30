@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streamline | Next-Gen CI/CD Orchestration</title>
+    <meta name="description" content="Experience the future of continuous integration and delivery with Streamline. Automate your workflow with precision.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="glow-container">
+        <div class="glow-1"></div>
+        <div class="glow-2"></div>
+    </div>
+
+    <nav>
+        <div class="logo">STREAMLINE</div>
+        <div class="nav-links">
+            <a href="#features">Features</a>
+            <a href="#docs">Documentation</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#about">About</a>
+        </div>
+        <a href="#" class="btn btn-secondary" style="padding: 0.6rem 1.2rem;">Log In</a>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="badge">v2.0 is now live</div>
+            <h1>Automate Your <span>Pipeline</span><br>With Intelligence</h1>
+            <p>The ultimate CI/CD platform for modern engineering teams. Ship code faster, safer, and with complete visibility.</p>
+            
+            <div class="cta-group">
+                <a href="#" class="btn btn-primary">Get Started Free</a>
+                <a href="#" class="btn btn-secondary">Request Demo</a>
+            </div>
+
+            <div class="hero-image-container">
+                <img src="hero.png" alt="CI/CD Pipeline Visualization">
+                <div class="hero-image-overlay"></div>
+            </div>
+        </section>
+
+        <section class="features" id="features">
+            <div class="feature-card">
+                <div class="feature-icon"><i data-lucide="zap"></i></div>
+                <h3>Lightning Fast</h3>
+                <p>Distributed build systems that scale with your team. Zero-latency deployments to any cloud provider.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i data-lucide="shield"></i></div>
+                <h3>Secure by Design</h3>
+                <p>Enterprise-grade security with automated vulnerability scanning and secret management built-in.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i data-lucide="layers"></i></div>
+                <h3>Multi-Cloud</h3>
+                <p>Deploy to AWS, GCP, Azure, or on-premise with a single unified configuration file.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo" style="margin-bottom: 1rem;">STREAMLINE</div>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">Revolutionizing the way teams ship software.</p>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Streamline Technologies. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Simple scroll animation for cards
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.style.opacity = "0";
+            card.style.transform = "translateY(20px)";
+            card.style.transition = "all 0.6s cubic-bezier(0.4, 0, 0.2, 1)";
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
